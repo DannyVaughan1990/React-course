@@ -4,9 +4,9 @@ const Landing = () => {
     return (
         <div style={{ textAlign: 'center' }}>
             <h1>
-                Daniel Vaughan Feedback App!
+                Daniel Vaughan 
             </h1>
-            Collect feedback from your clients and customers.
+            Sign in to use my customer/client feedback application.
         </div>
     );
 };
