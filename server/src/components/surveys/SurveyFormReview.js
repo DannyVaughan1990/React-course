@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
+import ScrollAnimation from 'react-animate-on-scroll';
+import "animate.css/animate.min.css";
 
 
 const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
@@ -21,20 +23,23 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
 
 
     return (
-        <div>
-          <h5>Please confirm your entries</h5>
+        
+        <div className="card-white">
+        <ScrollAnimation animateIn="zoomIn" animateOut="zoomOut">
+        <h5>Please confirm your entries</h5>
           {reviewFields}
           <button 
-          className="black red-text btn-flat"
+          className="black white-text btn-flat"
           onClick={onCancel}>
           Back
           </button>
           <button 
           onClick={() => submitSurvey(formValues, history)}
-          className="right red black-text btn-flat">
-             Send Survey
+          className="right white black-text btn-flat">
+                Send
              <i className="material-icons right">email</i> 
           </button>
+          </ScrollAnimation>
         </div>
     );
 };

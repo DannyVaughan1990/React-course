@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchSurveys } from '../../actions';
+import ScrollAnimation from 'react-animate-on-scroll';
+import "animate.css/animate.min.css"
+
 
 class SurveyList extends Component {
     componentDidMount() {
@@ -10,7 +13,8 @@ class SurveyList extends Component {
     renderSurveys() { 
         return this.props.surveys.reverse().map(survey => {
             return (
-              <div className="card white darken-1" key={survey.id}>
+                <ScrollAnimation animateIn="slideInLeft" animateOut="slideOutLeft">
+              <div className="card white" key={survey.id}>
                 <div className="card-content">
                   <span className="card-title">{survey.title}</span>
                   <p>
@@ -25,6 +29,8 @@ class SurveyList extends Component {
                  <a>No: {survey.no}</a>
                 </div>
               </div>
+              </ScrollAnimation>
+
             );
         })
     }

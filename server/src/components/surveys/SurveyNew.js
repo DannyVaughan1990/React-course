@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import SurveyForm from './SurveyForm';
 import SurveyFormReview from './SurveyFormReview';
+import ScrollAnimation from 'react-animate-on-scroll';
+import "animate.css/animate.min.css"
 
 class SurveyNew extends Component {
     state = { showFormReview: false };
@@ -20,9 +22,11 @@ class SurveyNew extends Component {
 
     render() {
         return (
-            <div>
+            <ScrollAnimation animateIn="zoomIn" animateOut="zoomOut">
+            <div className="card white">
                 {this.renderContent()}
             </div>
+            </ScrollAnimation>
         );
     }
 }
